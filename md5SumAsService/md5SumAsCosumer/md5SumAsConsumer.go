@@ -13,7 +13,6 @@ func main() {
 	data := []byte("Hello World")
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(data))
 
-	req.Header.Set("X-Custom-Header", "myvalue")
 	req.Header.Set("Content-Type", "application/json")
 
 	client := &http.Client{}
