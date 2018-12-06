@@ -1,16 +1,20 @@
 package main
 
 import (
-	"bufio"
 	"crypto/md5"
 	"fmt"
-	"os"
+	"io/ioutil"
 )
 
-func main() {
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
 
-	r := bufio.NewReader(os.Stdin)
-	text, _ := r.ReadString('\n')
+func main() {
+	text, err := ioutil.ReadFile("file.txt")
+	check(err)
 
 	if len(text) <= 1 {
 		fmt.Println("Input text is NULL ! !")
