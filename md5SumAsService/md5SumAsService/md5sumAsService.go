@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type dataToPass struct {
-	Submissions map[string][]string
-}
-
 func handler(w http.ResponseWriter, r *http.Request) {
 
 	body, err := ioutil.ReadAll(r.Body)
